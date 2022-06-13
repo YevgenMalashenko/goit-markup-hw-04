@@ -10,6 +10,7 @@
   --primary-background-color: #FFFFFF;
   --secondary-background-color: #F5F4FA;
   --add-background-color: #2F303A;
+  --icon-primary-color: #AFB1B8
 }
 
 body {
@@ -98,6 +99,27 @@ header .contacts-header {
   padding-bottom: 20px;
 }
 
+.contact-email {
+  display: flex;
+  align-items: center;
+}
+
+.email-icon {
+  margin-right: 10px;
+  fill: var(--primary-text-color);
+}
+
+.contact-tel {
+  display: flex;
+  align-items: center;
+}
+
+.tel-icon {
+  margin-right: 10px;
+  fill: var(--primary-text-color);
+}
+
+
 .link {
   color: var(--site-nav-links-color);
   font-weight: 500;
@@ -133,17 +155,42 @@ header .contacts-header {
   color: var(--accent);
 }
 
+.contact-email:hover .email-icon,
+.contact-tel:hover .tel-icon,
+.contact-email:focus .email-icon,
+.contact-tel:focus .tel-icon {
+  fill: var(--accent);
+}
+
 
 /* страница Студия */
 /* Герой */
 
-.hero {
-  padding: 200px 0;
-  background-color: var(--add-background-color);
+.hero.section {
+  padding: 0 0;
+  /* background-color: var(--add-background-color); */
 
   text-align: center;
 }
 
+.hero-container {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  background-color: var(--add-background-color);
+  background-image:
+    linear-gradient(to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+      ),
+    url(../images/herobcgrnd.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+
+}
 
 button {
   position: center;
@@ -222,6 +269,19 @@ button:focus {
   width: calc((100% - 90px) / 4);
 }
 
+.feature-item-wrapper {
+  width: 100%;
+  margin-bottom: 30px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background-color: var(--secondary-background-color);
+}
+
+
 
 
 /* Чем занимается команда */
@@ -231,7 +291,9 @@ button:focus {
 }
 
 .activity-title,
-.team-title {
+.team-title,
+.customers-title {
+  margin-bottom: 50px;
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 36px;
@@ -240,9 +302,7 @@ button:focus {
   text-align: center;
 }
 
-.activity-title {
-  margin-bottom: 50px;
-}
+
 
 .activity-list {
   display: flex;
@@ -276,9 +336,7 @@ button:focus {
   padding: 0 15px;
 }
 
-.team-title {
-  margin-bottom: 50px;
-}
+
 
 /* задает display:block картинке чтобы убрать нижний "отступ" */
 .team-list img {
@@ -291,6 +349,12 @@ button:focus {
   background-color: #FFFFFF;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2);
+
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
 
 /* задает отступы справа всем єлементам кроме последнего */
@@ -299,7 +363,7 @@ button:focus {
 }
 
 .team-descr {
-  padding: 30px 0;
+  padding: 30px 32px;
 
 }
 
@@ -315,6 +379,7 @@ button:focus {
 }
 
 .position {
+  margin-bottom: 16px;
   text-align: center;
 
   color: var(--primary-text-color);
@@ -328,6 +393,96 @@ button:focus {
   flex-wrap: wrap;
 }
 
+.team-links-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+
+}
+
+
+.team-link-item {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  /* outline: 1px dotted red; */
+
+}
+
+
+.team-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.team-link:hover,
+.team-link:focus {
+  background-color: var(--accent);
+}
+
+
+
+
+.team-link:hover .link-icon,
+.team-link:focus .link-icon {
+  fill: #FFFFFF;
+}
+
+
+.link-icon {
+  display: block;
+  fill: var(--icon-primary-color);
+}
+
+
+/* regular customers */
+
+.customers-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.customer-link {
+  max-width: 170px;
+  padding: 16px 32px;
+  border: 1px solid #AFB1B8;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customer-icon {
+  fill: var(--icon-primary-color);
+}
+
+
+.customer-link:hover,
+.customer-link:focus {
+  border-color: var(--accent);
+  fill: var(--accent);
+}
+
+.customer-link:hover .customer-icon,
+.customer-link:focus .customer-icon {
+  fill: var(--accent);
+}
+
+
+
+
+
+
 /* Футер */
 footer {
   background-color: var(--add-background-color);
@@ -339,6 +494,11 @@ footer {
 
 footer>.container {
   padding: 0 15px;
+  display: flex;
+}
+
+.contact-info {
+  min-width: 231px;
 }
 
 .footer-logo {
@@ -392,6 +552,54 @@ footer>.container {
   letter-spacing: 0.03em;
 }
 
+
+.join-us {
+  margin-top: 12px;
+  margin-left: 70px;
+}
+
+.join-us-title {
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-align: left;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.join-us-list {
+  list-style: none;
+  display: flex;
+  min-width: 206px;
+}
+
+.join-us-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.join-link-icon {
+  fill: #FFFFFF;
+}
+
+.join-us-link:hover,
+.join-us-link:focus {
+  background-color: var(--accent);
+
+}
+
+
+.join-us-item:not(:last-child) {
+  margin-right: 10px;
+}
+
 /* Портфолио */
 /* список проектов */
 
@@ -416,6 +624,14 @@ footer>.container {
   font-size: 16px;
   line-height: 1.62;
   letter-spacing: 0.03em;
+}
+
+
+.filter-button:hover,
+.filter-button:focus {
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.1);
 }
 
 .project-list-container {
@@ -482,10 +698,14 @@ footer>.container {
   display: block;
 }
 
-.project-link:hover,
-.project-link:focus {
-  opacity: 0.9;
+.project-list-item:hover,
+.project-list-item:focus {
+  box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
 }
+
+
 
 .project-name:hover,
 .project-name:focus,
