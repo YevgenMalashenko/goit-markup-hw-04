@@ -236,10 +236,21 @@ button:focus {
 
 
 /* заголовки скрыты полностью. Неправильно, как правильно, расскажут позже, сделано для стиллизации */
-.about-company-title,
+/* .about-company-title,
 .portfolio-title {
   display: none;
   visibility: hidden;
+} */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .feature-title {
